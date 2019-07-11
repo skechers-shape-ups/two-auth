@@ -64,7 +64,7 @@ const postgresController = {
         });
     });
   },
-  postgresSend: function (userID) {
+  postgresSend: function (userID, phoneCall = false) {
     //still unclear on what 'this' refers to
     //deconstructs client and pgConnect off "this"
     const { pgConnect, client } = this;
@@ -111,7 +111,7 @@ const postgresController = {
                 to: phone,
                 //channel could be the way authentication is sent
                 //in order to implement phone call stretch feature, we may need to change this
-                channel: "sms"
+                channel: phoneCall ? "call" : "sms"
               })
               //we are unsure what is exactly in the 'verification' data
               //could possible be a simple verification of whether the message was successfully sent

@@ -98,7 +98,7 @@ describe('tests the pg create method', () => {
     const fakeClient = new FakeClient(false);
     return fakeClient.create('Will', '9795718947')
       .catch((err) => {
-        expect(err).toEqual(Error('phone number must be formatted correctly'))
+        expect(err).toEqual(Error('phone number invalid'))
       });
   });
 
