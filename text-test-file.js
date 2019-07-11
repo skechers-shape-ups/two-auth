@@ -19,8 +19,8 @@ const client = TwoAuth(willSid, willToken, options);
 //if we invoke client.create w/ userID &  a phone number, a new client is created in Twilio
 // console.log(client, '***');
 const asnyncTest = async () => {
-  await client.create('juanIsTheMan', '+15044270739');
-  await client.send('juanIsTheMan', true);
+  await client.create('Dillon', '+19795718947');
+  await client.send('Dillon', true);
 }
 
 asnyncTest();
