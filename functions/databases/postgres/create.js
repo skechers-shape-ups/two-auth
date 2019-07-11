@@ -20,6 +20,7 @@ module.exports = function (userID, phone) {
           // need to close thread of execution
           return reject(new Error('typeof phone must be string'));
         }
+<<<<<<< HEAD
         //input for 'phone' must be in a US phone number format
         if (phone.substring(0, 2) !== '+1') {
           done();
@@ -36,6 +37,16 @@ module.exports = function (userID, phone) {
           return reject(new Error('including the +1, the length of phone must equal 12'))
         }
 
+=======
+    //input for 'phone' must be in a US phone number format
+      //   if (phone.substring(0, 2) !== '+1') {
+      //     done();
+      // //if improperly formatted, we throw an error and invoke "done"
+      //     reject(new Error('phone must be string formatted as such: +1XXXXXXXXXX'));
+      //   }
+      // checks for valid phone number from any country
+      if (!phone.match(/^\+?[1-9]\d{1,14}$/g)) reject(new Error('phone number invalid'));
+>>>>>>> fc41a572cf789f7388c6057caeed425f83ddcc04
 
         //we should consider verifying the proper length of the 'phone' number
         //we should also consider verifyint that each 'phone' number is all numbers
